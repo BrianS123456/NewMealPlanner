@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -23,21 +24,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mealplanner.R;
-import com.example.mealplanner.ui.login.LoginViewModel;
-import com.example.mealplanner.ui.login.LoginViewModelFactory;
+import com.example.mealplanner.Register;
 
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    public Button butr;
+
+    public void init(){
+        butr = (Button)findViewById(R.id.buttonreg);
+        butr.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent act = new Intent(LoginActivity.this, Register.class);
+
+                startActivity((act));
+            }
+        }));
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        init();
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = findViewById(R.id.username);
+        final EditText usernameEditText = findViewById(R.id.Email);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
