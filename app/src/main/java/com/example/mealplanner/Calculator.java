@@ -2,9 +2,11 @@ package com.example.mealplanner;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import org.mariuszgromada.math.mxparser.*;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.EditText;
 
@@ -72,6 +74,28 @@ public class Calculator extends AppCompatActivity {
     }
 
     public void parenthesisBT(View view){
+        int cursorPos = display.getSelectionStart();
+        int openP = 0;
+        int closeP = 0;
+        int textL = display.getText().length();
+        for(int i = 0; i < cursorPos; i++){
+            if(display.getText().toString().substring(i, i + 1).equals("(")){
+                openP += 1;
+            }
+            if(display.getText().toString().substring(i, i + 1).equals("(")){
+                closeP += 1;
+            }
+        }
+
+        if(openP == closeP || display.getText().toString().substring(textL-1, textL).equals("")){
+            UpdateText("(");
+            display.setSelection(cursorPos + 1);
+        }
+        else if(closeP < openP && display.getText().toString().substring(textL-1, textL).equals("")) {
+            UpdateText(")");
+        }
+            display.setSelection(cursorPos + 1);
+
 
     }
 
@@ -96,7 +120,29 @@ public class Calculator extends AppCompatActivity {
     }
 
     public void equalsBT(View view){
+        String user = display.getText().toString();
 
+        user = user.replaceAll("÷", "/");
+        user = user.replaceAll("x", "*");
+
+        Expression exp = new Expression(user);
+
+        String result = String.valueOf((exp.calculate()));
+
+        display.setText(result);
+        display.setSelection(result.length());
+
+    }
+
+    public void backspaceBT(View view){
+        int cursorPos = display.getSelectionStart();
+        int textLen = display.getText().length();
+        if(cursorPos != 0 && textLen != 0){
+            SpannableStringBuilder select = (SpannableStringBuilder)display.getText();
+            select.replace(cursorPos - 1, cursorPos, "");
+            display.setText(select);
+            display.setSelection(cursorPos-1);
+        }
     }
 
     public void plusMinusBT(View view){
