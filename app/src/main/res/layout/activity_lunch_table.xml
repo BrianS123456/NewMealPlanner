@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BreakfastTable">
+    tools:context=".LunchTable">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -12,15 +12,13 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp">
         <TableRow>
-
-        <TextView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="BreakFast Meals"
+                android:text="Lunch Meals"
                 android:layout_weight="1"
                 android:gravity="center"/>
-    </TableRow>
-
+        </TableRow>
         <TableRow>
             <TextView
                 android:layout_width="wrap_content"
@@ -29,11 +27,11 @@
                 android:layout_weight="1"
                 android:gravity="center"/>
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Meal 2"
-            android:layout_weight="1"
-            android:gravity="center"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Meal 2"
+                android:layout_weight="1"
+                android:gravity="center"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,34 +39,29 @@
                 android:layout_weight="1"
                 android:gravity="center"/>
         </TableRow>
-
         <TableRow>
-
             <TextView
-                android:layout_width="256dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="3/4 cups of Bran Flakes\n 1 sliced banana \n 1 cup of fat-free milk" />
-
-            <TextView
-                android:layout_width="309dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="1 whole wheat pita \n 3 ounces of turkey breast \n 1/2 roasted pepper \n 1 teaspoon of mayo, mustard, and lettuce \n (All in one sandwich) \n 1 stick of skim mozzarella string cheese \n 2 kiwis"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:text="1 cup of frozen berries \n 1/2 banana \n 8 ounces of fat-free milk \n (Put into smoothie) \n 1 or 2 hard-boiled eggs" />
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 cup of vegetable soup (warm) \n 1 veggie burger with whole-grain toast \n 1 english muffin or bread thins \n 1 cup of grapes"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="1/2 cup of oats with low-fat or unsweetend soy milk \n 1/2 apple \n 1 teaspoon of honey \n pinch of cinnamon (optional)" />
-
+                android:text="4 ounces of shredded skinless roasted chicken breast \n 1/4 cup of sliced red grapes \n 1 tablespoon of almonds \n 1 tablespoon of mayo \n 1 tablespoon of plain, unsweetened greek yogurt \n 1 bowl of lettuce \n 1 banana" />
         </TableRow>
 
+    </TableLayout>
 
-</TableLayout>
+
 </LinearLayout>
-
-
