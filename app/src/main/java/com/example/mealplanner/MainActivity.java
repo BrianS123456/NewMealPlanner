@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     public Button but1;
     public Button butab;
     public Button buth;
-    public Button butcal;
+
 
     public void init(){
         but1 = (Button)findViewById(R.id.button1);
@@ -53,17 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void init4() {
-        butcal = (Button) findViewById(R.id.calbt);
-        butcal.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent act = new Intent(MainActivity.this, Calculator.class);
 
-                startActivity((act));
-            }
-        }));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +62,6 @@ public class MainActivity extends AppCompatActivity {
         init();
         init2();
         init3();
-        init4();
+
     }
 }

@@ -1,5 +1,7 @@
 package com.example.mealplanner.ui.login;
 
+import android.content.SharedPreferences;
+
 import androidx.annotation.Nullable;
 
 /**
@@ -28,4 +30,7 @@ class LoginResult {
     Integer getError() {
         return error;
     }
+
+
+
 }
